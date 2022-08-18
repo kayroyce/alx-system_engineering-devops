@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
-# Script lists content in current directory without initial #- in filenames
+#special ls
 
-files="$(ls)"
-for f in $files;
+for i in *
 do
-    echo "$f" | cut -d "-" -f2
+    echo "$i" | cut -d '-' -f 2;
 done
