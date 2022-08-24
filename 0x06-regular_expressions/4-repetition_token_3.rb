@@ -1,2 +1,4 @@
 #!/usr/bin/env ruby
-puts ARGV[0].scan(/(hbt*?n)/).join
+# Match "hbn, hbtn, hbtttttn" not "hbon"
+
+puts ARGV[0].scan(/hbt*n/).join
