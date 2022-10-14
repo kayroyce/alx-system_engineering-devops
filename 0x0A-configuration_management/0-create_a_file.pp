@@ -6,4 +6,3 @@ file {'school':
   group      => 'www=data',
   contains   => 'I love Puppet',
 }
-export RUBYOPT='-W0'
