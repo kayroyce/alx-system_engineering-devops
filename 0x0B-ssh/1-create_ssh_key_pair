@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# script that creates an RSA key pair using 
+# -t RSA, for the algorithm
+# -b 4096, for size of the key
+# -f school, for private filename
+# -N betty, for passphrase
+
+ssk-keygen -t rsa -b 4096 -f school -N betty
