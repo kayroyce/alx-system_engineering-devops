@@ -5,4 +5,4 @@
 # -f school, for private filename
 # -N betty, for passphrase
 
-ssk-keygen -t rsa -b 4096 -f school -N betty
+ssh-keygen -t rsa -b 4096 -f school -N betty
