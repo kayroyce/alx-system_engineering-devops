@@ -2,7 +2,7 @@
 # configure SSH client to connect to server without typing a password
 
 Host server1
-    HostName 3.234.244.63
+    HostName 3.235.193.190
     User ubuntu
     IdentityFile ~/.ssh/school
     PasswordAuthentication no
