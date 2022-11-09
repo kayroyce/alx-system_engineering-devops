@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 # installs nginx and configures it on a remote server
 
-apt-get -y update
-apt-get -y install nginx
-ufw allow 'Nginx HTTP'
-echo "Hello World!" | sudo tee /var/www/html/index.html > /dev/null
-
+apt-get update
+apt-get install nginx -y
+ufw allow 22
+ufw allow 80
+ufw --force enable
+ufw status
+service status nginx
+echo "Hello World!" > /var/www/html/index.html 
 service nginx restart
