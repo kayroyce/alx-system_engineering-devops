@@ -1,5 +1,5 @@
-# using puppet to make change to configur. to file
+# using puppet to make change to config file
 
-exec { 'echo "PasswordAuthentication no\nIdentityFile ~/.ssh/school" >> /etc/ssh/ssh_config':
+exec { 'echo "PasswordAuthentication no\nIdentityFile ~/.ssh/school" >> ~/.ssh/ssh_config':
 	path	=> '/bin/'
 }
