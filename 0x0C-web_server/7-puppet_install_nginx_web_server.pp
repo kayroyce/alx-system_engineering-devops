@@ -1,23 +1,8 @@
-# Install and config the nginx
-package { 'nginx':
-  ensure => installed,
-  name   => 'nginx',
-}
-
-file { '/var/www/html/index.html':
-  content => 'Hello World',
-  path    => '/var/www/html/index.html'
-}
-
-file_line { 'title':
-  ensure   => present,
-  path     => '/etc/nginx/sites-available/default',
-  after    => 'server_name _;',
-  line     => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
-  multiple => true
-}
-
-service { 'nginx':
-  ensure  => running,
-  require => Package['nginx'],
-}
+# install nginx
+exec {'/usr/bin/env apt-get -y update': }
+exec {'/usr/bin/env apt-get -y install nginx': }
+exec {'/usr/bin/env echo "Hello World" > /var/www/html/index.html': }
+exec {'/usr/bin/env sed -i "/server_name _;/ a\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;" /etc/nginx/sites-available/default': }
+exec {'/usr/bin/env sed -i "/server_name _;/ a\\\terror_page 404 /custom_404.html;" /etc/nginx/sites-available/default': }
+exec {'/usr/bin/env echo "Ceci n\'est pas une page" > /var/www/html/custom_404.html': }
+exec {'/usr/bin/env service nginx start': }
