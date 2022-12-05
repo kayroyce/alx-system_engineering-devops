@@ -53,11 +53,5 @@ Backend www-backend
 	redirect scheme https code 301 if !{ ssl_fc }
 	# backend config settings
 	balance roundrobin
-<<<<<<< HEAD
-	server 935-web-01 54.234.72.248:80 check
-	server 935-web-02 54.165.71.85:80 check
-=======
-:wq
-ver 36768-web-01 54.234.72.248:80 check
-	server 36768-web-02 54.165.71.85:80 check
->>>>>>> 4cc0f89 (puppi)
+	server 46604-web-01 100.25.153.178:80 check
+	server 46604-web-02 54.165.71.85:80 check
